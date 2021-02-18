@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">WirelessWagon</string>
+
+    <string name="paired_status_title">Do you have an appropriate device paired? : </string>
+    <string name="paired_device_name">The name of your paired device is : </string>
+    <string name="connection_status_title">Are you currently connected? : </string>
+    <string name="connection_toggle_button_text">Toggle Connection</string>
+    <string name="go_to_diagnostic_activity_button_text">Open Diagnostic Window</string>
+    <string name="return_to_main_activity_button_text">Return To Basic Window</string>
+
+    <string name="status_yes">Yes</string>
+    <string name="status_no">No</string>
+    <string name="status_NA">NA</string>
+
+</resources>
