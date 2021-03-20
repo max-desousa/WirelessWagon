@@ -11,5 +11,8 @@
     <string name="status_yes">Yes</string>
     <string name="status_no">No</string>
     <string name="status_NA">NA</string>
+    <string name="rssi_header">RSSI Value For DUT: </string>
+    <string name="discovery_status_header">Is Device In Discovery Mode?: </string>
+    <string name="start_discovery_button_text">Toggle Discovery Process</string>
 
 </resources>
