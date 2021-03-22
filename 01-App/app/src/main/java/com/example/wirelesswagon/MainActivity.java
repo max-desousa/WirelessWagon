@@ -1,13 +1,18 @@
 package com.example.wirelesswagon;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
+import android.Manifest;
+import android.app.Activity;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -53,6 +58,19 @@ public class MainActivity extends AppCompatActivity {
                     btAdapter.cancelDiscovery();
                 }
                 else {
+                    String permissions[] = {Manifest.permission.ACCESS_FINE_LOCATION};
+                    if (ContextCompat.checkSelfPermission(MainActivity.this,
+                            Manifest.permission.ACCESS_FINE_LOCATION)
+                            != PackageManager.PERMISSION_GRANTED) {
+
+                        Log.i("info", "No fine location permissions");
+
+                        /*ActivityCompat.requestPermissions(this,
+                                arrayOf(Manifest.permission.ACCESS_FINE_LOCATION),
+                                1)*/
+                        ActivityCompat.requestPermissions(MainActivity.this,permissions,1);
+                    }
+
                     btAdapter.cancelDiscovery();
                     btAdapter.startDiscovery();
                 }
@@ -133,9 +151,12 @@ public class MainActivity extends AppCompatActivity {
             if (action.equals(BluetoothDevice.ACTION_FOUND)) {
                 BluetoothDevice device = intent.getParcelableExtra(BluetoothDevice.EXTRA_DEVICE);
                 String name = device.getName();
-
-                if (name.contains(DEVICE_NAME)) {
-                    mTextView_RSSIValue.setText(Integer.toString(intent.getIntExtra(BluetoothDevice.EXTRA_RSSI, 0)));
+                if (name != null) {
+                    if (name.contains(DEVICE_NAME)) {
+                        short number = intent.getShortExtra(BluetoothDevice.EXTRA_RSSI, Short.MIN_VALUE);
+                        mTextView_RSSIValue.setText(Short.toString(number));
+                        btAdapter.cancelDiscovery();
+                    }
                 }
             }
 
