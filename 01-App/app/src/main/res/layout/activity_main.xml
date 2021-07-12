@@ -15,8 +15,78 @@
         <Space
             android:layout_width="0dp"
             android:layout_height="1dp"
-            android:layout_weight="5" >
-        </Space>
+            android:layout_weight="2"></Space>
+
+        <TextView
+            android:id="@+id/textView_GPSHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/gps_data_section_header" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="3" />
+
+        <TextView
+            android:id="@+id/textView_LatitudeHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/gps_data_latitude_header" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/textView_Latitude"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/status_NA" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="3" />
+
+        <TextView
+            android:id="@+id/textView_LongitudeHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/gps_data_longitude_header" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/textView_Longitude"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/status_NA" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="2" />
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="?android:attr/listDivider" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="5" />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -25,13 +95,13 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/TextView_DiscoveryHeader"
+                android:id="@+id/textView_DiscoveryHeader"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/discovery_status_header" />
 
             <TextView
-                android:id="@+id/TextView_DiscoveryStatus"
+                android:id="@+id/textView_DiscoveryStatus"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/status_NA" />
@@ -50,13 +120,13 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/TextView_RSSIHeader"
+                android:id="@+id/textView_RSSIHeader"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/rssi_header" />
 
             <TextView
-                android:id="@+id/TextView_RSSIValue"
+                android:id="@+id/textView_RSSIValue"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/status_NA" />
@@ -75,7 +145,7 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/Button_StartDiscovery"
+                android:id="@+id/button_StartDiscovery"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/start_discovery_button_text" />

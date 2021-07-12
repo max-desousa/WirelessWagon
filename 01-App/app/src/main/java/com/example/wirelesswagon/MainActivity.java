@@ -5,7 +5,6 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import android.Manifest;
-import android.app.Activity;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.content.BroadcastReceiver;
@@ -41,9 +40,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         //setup widgets to their views
-        mTextView_DiscoveryStatus = (TextView)findViewById(R.id.TextView_DiscoveryStatus);
-        mTextView_RSSIValue = (TextView)findViewById(R.id.TextView_RSSIValue);
-        mButton_StartDiscovery = (Button)findViewById(R.id.Button_StartDiscovery);
+        mTextView_DiscoveryStatus = (TextView)findViewById(R.id.textView_DiscoveryStatus);
+        mTextView_RSSIValue = (TextView)findViewById(R.id.textView_RSSIValue);
+        mButton_StartDiscovery = (Button)findViewById(R.id.button_StartDiscovery);
 
         //Initialize Bluetooth Adapter
         btAdapter = BluetoothAdapter.getDefaultAdapter();
@@ -169,5 +168,8 @@ public class MainActivity extends AppCompatActivity {
         }
     };
 
+    private void createLocationRequest() {
+        LocationRequest locationRequest = LocationRequest
+    }
 
 }
