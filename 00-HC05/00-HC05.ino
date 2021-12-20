@@ -34,7 +34,7 @@ void setup() {
 
   attachInterrupt(digitalPinToInterrupt(BUTTON2), InitializeBluetoothModuleFlag, FALLING);
 
-  Serial.begin(9600);
+  Serial.begin(38400);
 
   
   
@@ -74,24 +74,25 @@ void InitializeBluetoothModule() {
   Serial.write("AT+ROLE=0\r\n");
   delay(1000);
   String commandPrefix = "AT+NAME=";
-  String deviceName = "InspectorGadget";
-  String randomNumber = String(random(999));
+  //String deviceName = "InspectorGadget";
+  String deviceName = "GodComplex";
+  String randomNumber = String(random(9999));
   String newLine = "\r\n";
   String finalDeviceName = commandPrefix + deviceName + randomNumber + newLine;
   char* finalDeviceNameCharArray = (char*) malloc(sizeof(char)*(finalDeviceName.length() + 1));
   finalDeviceName.toCharArray(finalDeviceNameCharArray, finalDeviceName.length() + 1);
   Serial.write(finalDeviceNameCharArray);
   delay(1000);
-  Serial.write("AT+UART=9600,1,0\r\n");
+  Serial.write("AT+UART=38400,1,0\r\n");
   delay(1000);
   Serial.write("AT+CLASS=1\r\n");
   //delay(1000);
-  digitalWrite(BLUETOOTH_POWER, false);
-  delay(1000);
-  digitalWrite(KEY, false);
-  delay(1000);
-  digitalWrite(BLUETOOTH_POWER, true);
+  //digitalWrite(BLUETOOTH_POWER, false);
+  //delay(1000);
+  //digitalWrite(KEY, false);
+  //delay(1000);
+  //digitalWrite(BLUETOOTH_POWER, true);
   digitalWrite(LED, false);
   Serial.flush();
-  Serial.begin(9600);
+  Serial.begin(38400);
 }
