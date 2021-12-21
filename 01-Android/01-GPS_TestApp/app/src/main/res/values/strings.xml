@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">GPSTestApp</string>
+    <string name="string_ActivityHeader">My GPS Test App</string>
+    <string name="string_LongitudeHeader">Current Longitude:</string>
+    <string name="string_LatitudeHeader">Current Latitude:</string>
+    <string name="string_InitialLatitude">[Latitude will go here...]</string>
+    <string name="string_InitialLongitude">[Longitude will go here...]</string>
+</resources>
