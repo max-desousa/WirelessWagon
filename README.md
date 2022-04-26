@@ -1,2 +1,3 @@
 # WirelessWagon
-My project to make load bearing wagon like project that will connect wirelessly to a persons phone to move objects for them. 
+Here I am going to start looking at work related to the UBLOX
+device. It seems to be an affordable and formidable RTK solution
