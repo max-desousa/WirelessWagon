@@ -1,0 +1,19 @@
+===============================================================================================================
+
+Address
+	The I2C address is more complicated than it should have been: perhaps don't read whilst drunk...
+	
+	The default address is: 132 (base 10) or 0x84
+
+		only the 7 MSB is the address though...
+		so the address is really 66 (base 10) or  0x42
+		
+		there are a couple of points where the address is referenced, 
+		it's always referenced as being 7 bits - its less clear, but it seems that bit 8 is always 0
+			the reason is less clear
+				i've seen some parts of the doc specify that it's a read/write bit
+				other parts of the doc specify that it is reserved, and all reserved bits are 0
+
+		The long and short of it is that the Sparkfun library used address (unshifted of 0x42)
+
+===============================================================================================================
