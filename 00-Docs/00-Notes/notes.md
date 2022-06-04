@@ -52,7 +52,12 @@ Antennas should be high and away from electrical noise
 
 ## Base and Rover configuration for moving bas RTK operation
 
+Moving base mode differs from standard RTK operation in that the base station is no longer stationary at a predetermined location. Both the reference station and rover receivers are allowed to move while computing an accurate vector between the receiver antennas. 
 
+There are specific rules that apply to the base in moving base apps
+* base and rover should update their location data at the same rate
+* timing data (from 4072.1) is no longer necessary
+* 4072.0 will be necessary each EPOCH
 
 
 ## General Notes
