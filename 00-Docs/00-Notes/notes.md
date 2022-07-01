@@ -59,6 +59,29 @@ There are specific rules that apply to the base in moving base apps
 * timing data (from 4072.1) is no longer necessary
 * 4072.0 will be necessary each EPOCH
 
+## Performance degredation due to moving base applications
+
+* GNSS tracking will always be worse than that of a static base
+* There seems to be a slower time in computation
+  * There seems to be the possibility that due to time-matching requirements that the position could be deemed invalid.
+  * Seems that the timing of the link between rover/base NEEDS to be able to support 1hz update rate.
+ 
+## Notes from the Sparkfun library
+
+The subroutines within the function:
+* SetPacketPayloadCFGSize
+  * None of this seems to be related to the ZED
+  * This seems to only be setting parameters/items in the object
+    * which would presumably be used in subsequent function calls specific to the hardware.
+* createFileBuffer
+* isConnected
+  * contains two functions
+    * Function one is a simple begin/end transmission on I2C
+      * This would mean this is obviously only done with I2C
+      * if a non-zer result is received, then the top-level parent function bails and fails. Presumably there is a general response to acked packets... **I Need to refresh on this aspect of I2C**
+    * Function 2 is done for all comms methods
+      * getPortSettingsInternal()
+ 
 
 ## General Notes
 * Moving base solutions are optimal for "follow me uav's"
