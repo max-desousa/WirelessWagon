@@ -1,8 +1,8 @@
 #include <stdio.h>
-//#include "ZEDF9P.h"
 #include "hardware/i2c.h"
 #include "hardware/gpio.h"
 #include "pico/stdlib.h"
+#include "ZEDF9P.h"
 
 int main(void) 
   {
@@ -17,16 +17,16 @@ int main(void)
   i2c_init(i2c0, 115200);
 
   bool zedf9pWiredCorrectly;
+
   zedf9pWiredCorrectly = DeviceConnected();
 
-  //if (zedf9pWiredCorrectly)
-  //  {
-  //  printf("Device wired correctly.\n");
-  //  }
-  //else
-  //  {
-  //  printf("Device not responding\n");
-  //  }
-  //return zedf9pWiredCorrectly;
-  return 0;
+  if (zedf9pWiredCorrectly)
+    {
+    printf("Device wired correctly.\n");
+    }
+  else
+    {
+    printf("Device not responding\n");
+    }
+  return zedf9pWiredCorrectly;
   }

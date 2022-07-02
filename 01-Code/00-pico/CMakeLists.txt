@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.13)
+cmake_minimum_required(VERSION 3.12)
 
 include($ENV{PICO_SDK_PATH}/external/pico_sdk_import.cmake)
 
@@ -7,15 +7,15 @@ set(CMAKE_C_STANDARD 11)
 
 pico_sdk_init()
 
-#add_subdirectory(Ex01-Accuracy)
 add_subdirectory(ZEDF9P)
+#add_library(BROKEN_DUCK INTERFACE)
+#target_sources(BROKEN_DUCK INTERFACE ${CMAKE_CURRENT_SOURCE_DIR}/broken.c)
+#target_link_libraries(BROKEN_DUCK INTERFACE hardware_i2c)
 
 add_executable(Wagon main.c)
 
-pico_enable_stdio_usb(Wagon 1)
-pico_add_extra_outputs(Wagon)
+target_link_libraries(Wagon zedf9p_lib hardware_i2c hardware_gpio pico_stdlib)
 
-target_link_libraries(Wagon
-hardware_i2c
-hardware_gpio
-pico_stdlib)
+pico_enable_stdio_usb(Wagon 1)
+
+pico_add_extra_outputs(Wagon)
