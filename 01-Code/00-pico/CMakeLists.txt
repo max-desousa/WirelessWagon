@@ -9,6 +9,7 @@ pico_sdk_init()
 
 #add_subdirectory(Ex01-Accuracy)
 add_subdirectory(ZEDF9P)
+add_subdirectory(LatLongAccur)
 
 add_executable(Wagon main.c)
 
