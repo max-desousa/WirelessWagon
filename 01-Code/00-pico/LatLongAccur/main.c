@@ -19,14 +19,25 @@ int main(void)
   bool zedf9pWiredCorrectly;
   zedf9pWiredCorrectly = DeviceConnected();
 
-  //if (zedf9pWiredCorrectly)
+  ///* Begin copying src... */
+  //myGNSS.setI2COutput(COM_TYPE_UBX);
   //  {
-  //  printf("Device wired correctly.\n");
+  //  return (setPortOutput(COM_PORT_I2C, comSettings, maxWait
+  //  //class 0x06 for GetPortSettingsInternal
+  //  //CFG == 0x00 for GetPortSettingsInternal
   //  }
-  //else
-  //  {
-  //  printf("Device not responding\n");
-  //  }
-  //return zedf9pWiredCorrectly;
-  return 0;
+  //myGNSS.getLatitude();
+  //myGNSS.getLongitude();
+  //myGNSS.getAltitude();
+  //myGNSS.getPositionAccuracy();
+
+  if (zedf9pWiredCorrectly)
+    {
+    printf("Device wired correctly.\n");
+    }
+  else
+    {
+    printf("Device not responding\n");
+    }
+  return zedf9pWiredCorrectly;
   }
