@@ -1,9 +1,0 @@
-add_executable(position_accuracy main.c)
-
-pico_enable_stdio_usb(position_accuracy 1)
-pico_add_extra_outputs(position_accuracy)
-
-target_link_libraries(position_accuracy
-hardware_i2c
-pico_stdlib
-pico_time)
