@@ -16,7 +16,10 @@ include(fetch_micro_tools.cmake)
 
 add_executable(OnWagonEmbedded main.c)
 
-target_link_libraries(OnWagonEmbedded MICRO_TOOLS_PICO_I2C MICRO_TOOLS_PRECOMPILER)
+target_link_libraries(OnWagonEmbedded 
+  MICRO_TOOLS_PICO_I2C 
+  MICRO_TOOLS_PRECOMPILER
+  MICRO_TOOLS_GPS_ZEDF9P)
 
 pico_enable_stdio_usb(OnWagonEmbedded 1)
 
